@@ -61,13 +61,15 @@ async function getEmbedding(text){
     const res = await axios.post(
         "https://openrouter.ai/api/v1/embeddings",
         {
-            model: "text-embedding-ada-002",
+            model: "openai/text-embedding-3-small",
             input: text
         },
         {
-            headers:{
+            headers: {
                 Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "HTTP-Referer": "http://localhost:3000",
+                "X-Title": "AI PDF System"
             }
         }
     );
@@ -80,14 +82,16 @@ async function getBatchEmbeddings(texts){
     const res = await axios.post(
         "https://openrouter.ai/api/v1/embeddings",
         {
-            model: "text-embedding-ada-002",
+            model: "openai/text-embedding-3-small",
             input: texts
         },
         {
-            headers:{
-                Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-                "Content-Type": "application/json"
-            }
+            headers: {
+                    Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "http://localhost:3000",
+                    "X-Title": "AI PDF System"
+                }
         }
     );
 

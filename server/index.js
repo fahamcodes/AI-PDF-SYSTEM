@@ -1,4 +1,5 @@
-require('dotenv').config();
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
+console.log("KEY:", process.env.OPENROUTER_API_KEY);
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -58,8 +59,11 @@ ${userMessage}
                 messages:[{role:"user",content:prompt}]
             },
             {
-                headers:{
-                    Authorization:`Bearer ${process.env.OPENROUTER_API_KEY}`
+                headers: {
+                    Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "http://localhost:3000",
+                    "X-Title": "AI PDF System"
                 }
             }
         );
@@ -134,8 +138,11 @@ ${data.text.slice(0,4000)}
                 }]
             },
             {
-                headers:{
-                    Authorization:`Bearer ${process.env.OPENROUTER_API_KEY}`
+                headers: {
+                    Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "http://localhost:3000",
+                    "X-Title": "AI PDF System"
                 }
             }
         );
