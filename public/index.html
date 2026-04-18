@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Pdf Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <button id="themeToggle">🌙 Theme</button>
+        <h2>📚 AI Study</h2>
+        <hr class = "divider" >
+
+        <input type="file" id="file">
+        <button onclick="uploadPDF()">Upload PDF</button>
+
+        <p id="uploadStatus"></p>
+    </div>
+
+    <!-- CHAT AREA -->
+    <div class="chat-container">
+
+        <div id="chatBox" class="chat-box"></div>
+
+        <div class="input-area">
+            <input type="text" id="msg" placeholder="Ask anything...">
+            <button onclick="send()">Send</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
