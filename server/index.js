@@ -59,7 +59,7 @@ ${userMessage}
             },
             {
                 headers:{
-                    Authorization:`Bearer ${process.env.OPENAI_API_KEY}`
+                    Authorization:`Bearer ${process.env.OPENROUTER_API_KEY}`
                 }
             }
         );
@@ -135,7 +135,7 @@ ${data.text.slice(0,4000)}
             },
             {
                 headers:{
-                    Authorization:`Bearer ${process.env.OPENAI_API_KEY}`
+                    Authorization:`Bearer ${process.env.OPENROUTER_API_KEY}`
                 }
             }
         );

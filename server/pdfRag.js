@@ -66,7 +66,7 @@ async function getEmbedding(text){
         },
         {
             headers:{
-                Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+                Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
                 "Content-Type": "application/json"
             }
         }
@@ -85,7 +85,7 @@ async function getBatchEmbeddings(texts){
         },
         {
             headers:{
-                Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+                Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
                 "Content-Type": "application/json"
             }
         }
